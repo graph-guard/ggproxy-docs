@@ -1,0 +1,18 @@
+{
+  "name": "ggproxy-docs",
+  "version": "0.1.0",
+  "description": "GraphGuard Proxy Documentation",
+  "main": "index.js",
+  "repository": "https://github.com/graph-guard/ggproxy-docs",
+  "author": "Roman Sharkov <roman.scharkov@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.8",
+    "vue": "^3.2.37"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  }
+}
