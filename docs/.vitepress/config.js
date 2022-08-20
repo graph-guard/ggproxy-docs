@@ -1,6 +1,7 @@
 export default {
 	title: 'ggproxy',
 	description: 'GraphGuard Proxy',
+	base: "/ggproxy-docs/",
 	themeConfig: {
 		siteTitle: "GraphGuard Proxy",
 		logo: 'graph-guard.svg',
