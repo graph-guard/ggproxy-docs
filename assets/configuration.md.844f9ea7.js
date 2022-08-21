@@ -49,7 +49,7 @@ import{_ as s,o as n,c as a,a as e}from"./app.55153dbf.js";const C=JSON.parse('{
 <span class="line"><span style="color:#A6ACCD;">    products(limit: val &lt;= 10, after: any) {</span></span>
 <span class="line"><span style="color:#A6ACCD;">        id</span></span>
 <span class="line"><span style="color:#A6ACCD;">        name</span></span>
-<span class="line"><span style="color:#A6ACCD;">        relatedProducts(type: val == &quot;tea&quot; || val == &quot;juice&quot;) {</span></span>
+<span class="line"><span style="color:#A6ACCD;">        relatedProducts(type: val = &quot;tea&quot; || val = &quot;juice&quot;) {</span></span>
 <span class="line"><span style="color:#A6ACCD;">            id</span></span>
 <span class="line"><span style="color:#A6ACCD;">            name</span></span>
 <span class="line"><span style="color:#A6ACCD;">        }</span></span>
