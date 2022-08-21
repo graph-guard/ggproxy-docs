@@ -1,6 +1,6 @@
 # GQT Logical Operators
 
-GQT supports logical AND (`&&`) and OR (`||`) operators as well as parentheses allowing more complex logical constraints, for example: `val == 1 || (val >= 5 && val <= 10)`.
+GQT supports logical AND (`&&`) and OR (`||`) operators as well as parentheses allowing more complex logical constraints, for example: `val = 1 || (val >= 5 && val <= 10)`.
 
 ## Precedence
 
@@ -15,11 +15,11 @@ The operator precedence is ordered as follows:
 ```
 mutation {
     createPost(
-        title: val == "special" ||
+        title: val = "special" ||
             (bytelen >= 32 && bytelen <= 64),
-        category: val == "sports" ||
-            val == "music" ||
-            val == "science"
+        category: val = "sports" ||
+            val = "music" ||
+            val = "science"
     ) {
         id
     }
@@ -31,7 +31,7 @@ The template above will allow any of the following operations to **pass**:
 ```graphql
 mutation {
     createPost(
-        # OK: title matches val == "special"
+        # OK: title matches val = "special"
         title: "special",
         # OK: category is either "sports", "music", or "science"
         category: "music",

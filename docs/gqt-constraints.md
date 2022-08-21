@@ -6,7 +6,7 @@ The following constraints are supported:
 | Constr. | Description | Types |
 |-|-|-|
 | `any` | Matches all values of all types. | All types. |
-| `val == α` | Requires value to be exactly equal `α`. | All types. |
+| `val = α` | Requires value to be exactly equal `α`. | All types. |
 | `val != α` | Requires value to be not equal `α`. | All types. |
 | `val > α` | Requires value to be greater `α`. | All numeric types. |
 | `val >= α` | Requires value to be greater or equal `α`. | All numeric types. |
@@ -37,7 +37,7 @@ query {
         id
         name
         relatedProducts(
-            type: val == "chocolate",
+            type: val = "chocolate",
             tags: len < 4
             like: bytelen <= 128
         ) {
@@ -176,22 +176,22 @@ Value constraints can also be nested and applied to objects and arrays.
 ```
 mutation {
     postCoordinates(
-        data: val == [
-            val == {
+        data: val = [
+            val = {
                 x: val != null
                 y: val != null
             }
-            val == {
+            val = {
                 x: val != null
                 y: val != null
             }
-            val == {
+            val = {
                 x: val != null
                 y: val != null
             }
         ]
-        factors: val == [
-            val == [
+        factors: val = [
+            val = [
                 val != 10
                 val != 14
             ]

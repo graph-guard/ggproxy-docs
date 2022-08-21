@@ -83,7 +83,7 @@ query {
     products(limit: val <= 10, after: any) {
         id
         name
-        relatedProducts(type: val == "tea" || val == "juice") {
+        relatedProducts(type: val = "tea" || val = "juice") {
             id
             name
         }
