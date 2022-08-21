@@ -1,6 +1,6 @@
 # Configuration
 
-GraphGuard Proxy expects a specific configuration file structure. By default, the configuration directory is located under `/etc/ggproxy` but you can manually change it using `ggproxy server -config <path>`.
+GraphGuard Proxy expects a specific configuration file structure. By default, the configuration directory is located under `/etc/ggproxy` but you can manually change it using `ggproxy serve -config <path>`.
 
 ## Ingress & API
 
