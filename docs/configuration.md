@@ -38,9 +38,9 @@ The API server serves a GraphQL API providing debugging functionality and inform
 
 ## Services
 
-A service defines where to forward requests to and what whitelist to apply to incomming traffic.
+A service defines where to forward requests to and what whitelist to apply to incomming traffic. One `ggproxy` instance can host multiple services simultaneously and requires at least 1 service to be enabled. A service is uniquely identified by the name of its directory for example: `/etc/ggproxy/services_enabled/my_service` where the unique identifier is `my_service`. If your proxy is running at https://myproxy.tld and the unique ID of the service is `myservice` then GraphQL requests are sent to https://myproxy.tld/myservice.
 
-The configuration directory can contain both `services_enabled` and `services_disabled` subdirectories hosting enabled and disabled service definitions respectively. Disabled service definitions will not accept incoming traffic. A service is uniquely identified by the name of its directory for example: `/etc/ggproxy/services_enabled/my_service` where the unique identifier is `my_service`.
+The configuration directory can contain both `services_enabled` and `services_disabled` subdirectories hosting enabled and disabled service definitions respectively. Disabled service definitions will not accept incoming traffic.
 
 Each service definition must contain its main configuration file `config.yaml`:
 
