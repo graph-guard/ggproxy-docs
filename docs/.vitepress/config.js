@@ -14,6 +14,7 @@ export default {
 			items: [
 				{ text: 'Introduction', link: '/' },
 				{ text: 'Installation', link: '/installation' },
+				{ text: 'Quick Start', link: '/quick-start' },
 				{ text: 'Configuration', link: '/configuration' }
 			]
 		}, {
