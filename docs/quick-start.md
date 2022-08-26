@@ -25,7 +25,7 @@ ggproxy serve -config ./config
 
 ## Play
 
-You can now send GraphQL queries to <a href="http://localhost:8000/starwars">http://localhost:8000/starwars</a> using `POST` requests as described at [GraphQL - Serving over HTTP](https://graphql.org/learn/serving-over-http/#post-request):
+You can now send GraphQL queries to `http://localhost:8000/starwars` using `POST` requests as described at [GraphQL - Serving over HTTP](https://graphql.org/learn/serving-over-http/#post-request):
 
 ![`curl -X POST -H 'content-type: application/json' --data '{"query": "query Example {hero(episode: NEWHOPE) {id name friends { id name appearsIn } appearsIn }}", "variables": {}, "operationName": "Example"}' http://localhost:8000/starwars`](/quickstart_query.png)
 
@@ -33,6 +33,6 @@ You can now send GraphQL queries to <a href="http://localhost:8000/starwars">htt
 curl -X POST -H 'content-type: application/json' --data '{"query": "query Example {hero(episode: NEWHOPE) {id name friends { id name appearsIn } appearsIn }}", "variables": {}, "operationName": "Example"}' http://localhost:8000/starwars
 ```
 
-You can also access the API Playground under <a href="http://localhost:8080">http://localhost:8080</a>, which grants you direct unrestricted access to the API bypassing `ggproxy`.
+You can also access the API Playground under `http://localhost:8080`, which grants you direct unrestricted access to the API bypassing `ggproxy`.
 
 Feel free to change the configuration and restart the server to see changes.
