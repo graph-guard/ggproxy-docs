@@ -1,1 +1,0 @@
-import{_ as a,o as s,c as e,a as t}from"./app.2f199172.js";const _=JSON.parse('{"title":"Quick Start Guide","description":"","frontmatter":{},"headers":[],"relativePath":"quick-start.md"}'),n={name:"quick-start.md"},l=t("",9),r=[l];function o(i,c,p,d,u,g){return s(),e("div",null,r)}const b=a(n,[["render",o]]);export{_ as __pageData,b as default};
