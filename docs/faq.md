@@ -89,10 +89,20 @@ However, it should be noted that there are situations where QCA is the better so
 Learning GQT should be intuitive and easy to anyone familiar with GraphQL.
 Without templates, it would have been impossible to accept query, mutation, and subscription requests containing dynamic inputs.
 
-## Does the licence permit personal and commercial usage?
+## Does the license permit personal and commercial usage?
 
 GraphGuard Proxy is commercial closed source software, but it will always remain free for non-commercial open source projects ❤️.
 
 For commercial projects, a license is required. Special conditions will apply to startup businesses.
 
+Open Beta 1, 2022 is released under a special license valid until October 31st 2022.
+
 Pricing will be available soon.
+
+## What is `ggproxy` opposed to "GraphGuard Proxy"?
+
+"GraphGuard Proxy" and `ggproxy` are synonyms where the former is the official name of the software product while the latter is the name of the CLI executable.
+
+## Is GraphGuard Proxy production ready?
+
+GraphGuard Proxy is released as **Open Beta 1, 2022** and is **not yet production ready**! The software, even though stable, is still not fully tested. Some APIs may still be subject to change during the beta phase. We strongly recommend not to use it in production environments.
