@@ -15,4 +15,4 @@ We are maintaining the following community chats:
 - [Discord](https://discord.gg/PmWpQcE4KM)
 - [GitHub Discussions](https://github.com/graph-guard/ggproxy-docs/discussions)
 
-GraphGuard Proxy is commercial closed source software, but it will always remain free for non-commercial open source projects ❤️.
+GraphGuard Proxy is commercial closed source software, but it will always remain free for non-commercial open source projects ❤️
