@@ -8,11 +8,13 @@ The template whitelist is defined using the [GraphQL Template Language (GQT)](/g
 
 A single GraphGuard Proxy instance can host multiple services, each having its own whitelist and forwarding parameters.
 
+GraphGuard Proxy is commercial closed source software, but it will always remain free for non-commercial open source projects ❤️
+
 ## Community
 
-We are maintaining the following community chats:
+Join our community:
 - [Telegram](https://t.me/graphguard)
 - [Discord](https://discord.gg/PmWpQcE4KM)
 - [GitHub Discussions](https://github.com/graph-guard/ggproxy-docs/discussions)
 
-GraphGuard Proxy is commercial closed source software, but it will always remain free for non-commercial open source projects ❤️
+Please, feel free to contact us directly at support@graphguard.io.

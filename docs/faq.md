@@ -106,3 +106,8 @@ Pricing will be available soon.
 ## Is GraphGuard Proxy production ready?
 
 GraphGuard Proxy is released as **Open Beta 1, 2022** and is **not yet production ready**! The software, even though stable, is still not fully tested. Some APIs may still be subject to change during the beta phase. We strongly recommend not to use it in production environments.
+
+## Where to file bug reports and feature requests?
+
+Bug reports and feature requests are always welcome on our [GitHub Discussions](https://github.com/graph-guard/ggproxy-docs/discussions).
+You can also send bugs reports, feature requests and other inquiries to support@graphguard.io.
