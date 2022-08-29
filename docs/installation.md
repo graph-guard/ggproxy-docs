@@ -4,7 +4,7 @@ Open Beta 0.1.0 is only supported on macOS and Linux systems.<br>
 Just copy and run the installation script in your terminal:
 
 ```bash
-bash -c "curl -sSfL https://raw.githubusercontent.com/graph-guard/ggproxy-releases/main/install.sh | sudo sh -s -- 0.1.0"
+bash -c "curl -sSfL https://raw.githubusercontent.com/graph-guard/ggproxy-releases/main/install.sh | sudo sh -s -- 0.2.0"
 ```
 
 Once you've installed ggproxy you need to configure your setup under `/etc/ggproxy`.<br>
@@ -16,11 +16,11 @@ If the installation script fails, please consider the manual installation instru
 
 1. Download the [Beta release](https://github.com/graph-guard/ggproxy-releases/releases) archive containing the executable targeting your operating system.
 ```bash
-cd /tmp && curl -LO https://github.com/graph-guard/ggproxy-releases/releases/download/0.1.0/ggproxy-0.1.0-linux-amd64.tar.gz
+cd /tmp && curl -LO https://github.com/graph-guard/ggproxy-releases/releases/download/0.2.0/ggproxy-0.2.0-linux-amd64.tar.gz
 ```
 2. Extract the archive:
 ```bash
-mkdir ggproxy && tar -xvf ggproxy-0.1.0-linux-amd64.tar.gz -C ggproxy && cd ggproxy
+mkdir ggproxy && tar -xvf ggproxy-0.2.0-linux-amd64.tar.gz -C ggproxy && cd ggproxy
 ```
 3. Move your executable to `/usr/local/bin/` and the config directories to `/etc/ggproxy/`:
 ```bash
