@@ -1,6 +1,6 @@
 # Installation
 
-Open Beta 0.1.0 is only supported on macOS and Linux systems.<br>
+Open Beta 1 is only supported on macOS and Linux systems.<br>
 Just copy and run the installation script in your terminal:
 
 ```bash
