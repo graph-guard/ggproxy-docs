@@ -14,7 +14,7 @@ If the installation script fails, please consider the manual installation instru
 
 ## Manual
 
-1. Download the [Beta release](https://github.com/graph-guard/ggproxy-releases/releases) archive containing the executable targeting your operating system.
+1. Download the [Beta release](https://github.com/graph-guard/ggproxy-releases/releases) archive containing the executable targeting your operating system. Here we're proceeding with Linux.
 ```bash
 cd /tmp && curl -LO https://github.com/graph-guard/ggproxy-releases/releases/download/0.3.0/ggproxy-0.3.0-linux-amd64.tar.gz
 ```
