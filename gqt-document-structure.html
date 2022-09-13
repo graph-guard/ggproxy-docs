@@ -7,7 +7,7 @@
     <meta name="description" content="GraphGuard Proxy">
     <link rel="stylesheet" href="/assets/style.fd78a0fd.css">
     <link rel="modulepreload" href="/assets/app.2f199172.js">
-    <link rel="modulepreload" href="/assets/gqt-document-structure.md.7af73188.lean.js">
+    <link rel="modulepreload" href="/assets/gqt-document-structure.md.56c47d32.lean.js">
     
     <script id="check-dark-light">(()=>{const e=localStorage.getItem("vitepress-theme-appearance"),a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
   </head>
@@ -32,13 +32,21 @@
 <span class="line"><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> fruits </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> apples</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> oranges</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> bananas</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> cherries </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">}</span></span>
 <span class="line"></span></code></pre></div><div class="language-graphql"><button class="copy"></button><span class="lang">graphql</span><pre><code><span class="line"><span style="color:#676E95;"># ERR: forbidden field vegetables</span></span>
 <span class="line"><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> vegetables </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> cucumber </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">}</span></span>
-<span class="line"></span></code></pre></div><h2 id="document-metadata" tabindex="-1">Document Metadata <a class="header-anchor" href="#document-metadata" aria-hidden="true">#</a></h2><p>Documents can be annotated using frontmatter YAML:</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">query {</span></span>
-<span class="line"><span style="color:#A6ACCD;">    products(limit: val &lt;= 10, after: any) {</span></span>
-<span class="line"><span style="color:#A6ACCD;">        </span></span>
+<span class="line"></span></code></pre></div><h2 id="document-metadata" tabindex="-1">Document Metadata <a class="header-anchor" href="#document-metadata" aria-hidden="true">#</a></h2><p>Documents can be annotated using frontmatter YAML:</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">---</span></span>
+<span class="line"><span style="color:#A6ACCD;">name: Display Name</span></span>
+<span class="line"><span style="color:#A6ACCD;">tags:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - first_tag</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - second_tag</span></span>
+<span class="line"><span style="color:#A6ACCD;">---</span></span>
+<span class="line"><span style="color:#A6ACCD;">query {</span></span>
+<span class="line"><span style="color:#A6ACCD;">    fruits {</span></span>
+<span class="line"><span style="color:#A6ACCD;">        apples</span></span>
+<span class="line"><span style="color:#A6ACCD;">        oranges</span></span>
+<span class="line"><span style="color:#A6ACCD;">        bananas</span></span>
 <span class="line"><span style="color:#A6ACCD;">    }</span></span>
 <span class="line"><span style="color:#A6ACCD;">}</span></span>
 <span class="line"><span style="color:#A6ACCD;"></span></span></code></pre></div></div></div></main><!--[--><!--]--><footer class="VPDocFooter" data-v-f0af2311 data-v-a54a85bd><!----><div class="prev-next" data-v-a54a85bd><div class="pager" data-v-a54a85bd><a class="pager-link prev" href="/gqt.html" data-v-a54a85bd><span class="desc" data-v-a54a85bd>Previous page</span><span class="title" data-v-a54a85bd>Introduction to GQT</span></a></div><div class="has-prev pager" data-v-a54a85bd><a class="pager-link next" href="/gqt-constraints.html" data-v-a54a85bd><span class="desc" data-v-a54a85bd>Next page</span><span class="title" data-v-a54a85bd>Constraints</span></a></div></div></footer><!--[--><!--]--></div></div></div></div></div><!----><!--[--><!--]--></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"configuration.md\":\"fa67e359\",\"faq.md\":\"f7099515\",\"gqt-constraints.md\":\"0e5f0567\",\"gqt-document-structure.md\":\"7af73188\",\"gqt-logical-operators.md\":\"b06f2de2\",\"gqt-map-operator.md\":\"396b014e\",\"gqt.md\":\"05b1bed8\",\"index.md\":\"2c2fa64b\",\"installation.md\":\"42d2cc46\",\"quick-start.md\":\"e06725f6\",\"roadmap.md\":\"dbda9312\",\"team.md\":\"eabe129c\"}")</script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"configuration.md\":\"c59334bd\",\"faq.md\":\"f7099515\",\"gqt-constraints.md\":\"37eadfd3\",\"gqt-document-structure.md\":\"56c47d32\",\"gqt-logical-operators.md\":\"ef04108f\",\"gqt-map-operator.md\":\"c5641046\",\"gqt.md\":\"05b1bed8\",\"index.md\":\"2c2fa64b\",\"installation.md\":\"42d2cc46\",\"quick-start.md\":\"e06725f6\",\"roadmap.md\":\"4a328068\",\"team.md\":\"eabe129c\"}")</script>
     <script type="module" async src="/assets/app.2f199172.js"></script>
     
   </body>

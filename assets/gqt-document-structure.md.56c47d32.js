@@ -1,4 +1,4 @@
-import{_ as s,o as a,c as n,a as l}from"./app.2f199172.js";const d=JSON.parse('{"title":"GQT Document Structure","description":"","frontmatter":{},"headers":[{"level":2,"title":"Document Metadata","slug":"document-metadata"}],"relativePath":"gqt-document-structure.md"}'),p={name:"gqt-document-structure.md"},o=l(`<h1 id="gqt-document-structure" tabindex="-1">GQT Document Structure <a class="header-anchor" href="#gqt-document-structure" aria-hidden="true">#</a></h1><p>Each template document consists of a <code>query</code>, <code>mutation</code>, or <code>subscription</code> definition resembling a GraphQL operation.</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">query {</span></span>
+import{_ as s,o as a,c as n,a as p}from"./app.2f199172.js";const d=JSON.parse('{"title":"GQT Document Structure","description":"","frontmatter":{},"headers":[{"level":2,"title":"Document Metadata","slug":"document-metadata"}],"relativePath":"gqt-document-structure.md"}'),l={name:"gqt-document-structure.md"},e=p(`<h1 id="gqt-document-structure" tabindex="-1">GQT Document Structure <a class="header-anchor" href="#gqt-document-structure" aria-hidden="true">#</a></h1><p>Each template document consists of a <code>query</code>, <code>mutation</code>, or <code>subscription</code> definition resembling a GraphQL operation.</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">query {</span></span>
 <span class="line"><span style="color:#A6ACCD;">    fruits {</span></span>
 <span class="line"><span style="color:#A6ACCD;">        apples</span></span>
 <span class="line"><span style="color:#A6ACCD;">        oranges</span></span>
@@ -18,9 +18,17 @@ import{_ as s,o as a,c as n,a as l}from"./app.2f199172.js";const d=JSON.parse('{
 <span class="line"><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> fruits </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> apples</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> oranges</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> bananas</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> cherries </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">}</span></span>
 <span class="line"></span></code></pre></div><div class="language-graphql"><button class="copy"></button><span class="lang">graphql</span><pre><code><span class="line"><span style="color:#676E95;"># ERR: forbidden field vegetables</span></span>
 <span class="line"><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> vegetables </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> cucumber </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">}</span></span>
-<span class="line"></span></code></pre></div><h2 id="document-metadata" tabindex="-1">Document Metadata <a class="header-anchor" href="#document-metadata" aria-hidden="true">#</a></h2><p>Documents can be annotated using frontmatter YAML:</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">query {</span></span>
-<span class="line"><span style="color:#A6ACCD;">    products(limit: val &lt;= 10, after: any) {</span></span>
-<span class="line"><span style="color:#A6ACCD;">        </span></span>
+<span class="line"></span></code></pre></div><h2 id="document-metadata" tabindex="-1">Document Metadata <a class="header-anchor" href="#document-metadata" aria-hidden="true">#</a></h2><p>Documents can be annotated using frontmatter YAML:</p><div class="language-"><button class="copy"></button><span class="lang"></span><pre><code><span class="line"><span style="color:#A6ACCD;">---</span></span>
+<span class="line"><span style="color:#A6ACCD;">name: Display Name</span></span>
+<span class="line"><span style="color:#A6ACCD;">tags:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - first_tag</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - second_tag</span></span>
+<span class="line"><span style="color:#A6ACCD;">---</span></span>
+<span class="line"><span style="color:#A6ACCD;">query {</span></span>
+<span class="line"><span style="color:#A6ACCD;">    fruits {</span></span>
+<span class="line"><span style="color:#A6ACCD;">        apples</span></span>
+<span class="line"><span style="color:#A6ACCD;">        oranges</span></span>
+<span class="line"><span style="color:#A6ACCD;">        bananas</span></span>
 <span class="line"><span style="color:#A6ACCD;">    }</span></span>
 <span class="line"><span style="color:#A6ACCD;">}</span></span>
-<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre></div>`,14),e=[o];function t(c,r,D,y,A,i){return a(),n("div",null,e)}const u=s(p,[["render",t]]);export{d as __pageData,u as default};
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre></div>`,14),o=[e];function t(c,r,D,A,y,i){return a(),n("div",null,o)}const u=s(l,[["render",t]]);export{d as __pageData,u as default};
