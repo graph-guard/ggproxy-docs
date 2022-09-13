@@ -1,7 +1,10 @@
 # GQT Document Structure
 
-Each template document consists of a `query`, `mutation`, or `subscription` definition resembling a GraphQL operation.
+Each template document consists of a `query`, `mutation`, or `subscription` definition resembling a GraphQL operation. A GQT template defines a maxium set of nodes a client may ask for in 1 request.
 
+Asking for less than what is allowed by the template (subquery) is legal.
+The order of selections in the GraphQL query doesn't matter.
+GQT is also fragment and variable agnostic, which means that the client can use any shape of a request as long as it matches the template structurally and doesn't violate input constraints.
 ```
 query {
     fruits {
