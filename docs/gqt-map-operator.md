@@ -1,22 +1,24 @@
 # GQT Map Operator
 
-The map operator (`...`) applies a constraint to all items of an array.
+The map operator `[... <constraint>]` applies a constraint to all items of an array.
 
 ## Example
 
-```
+```graphql
 mutation {
     addNumbers(
-        numbers: [... val < 100]
+        # Accept a maximum of 10 numbers and
+        # require every number to be less than 100.
+        numbers: len < 10 && [... < 100]
     )
 }
 ```
 
 The template above will allow any of the following operations to **pass**:
 
-```graphql
+```
 mutation {
-    # OK: all numbers are smaller 100
+    # OK: 6 numbers, all numbers are less than 100
     addNumbers(numbers: [1, 2, 3, 4, 5, 6])
 }
 ```

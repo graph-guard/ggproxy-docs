@@ -80,10 +80,10 @@ tags:
     - related_products
 ---
 query {
-    products(limit: val <= 10, after: any) {
+    products(limit: <= 10, after: *) {
         id
         name
-        relatedProducts(type: val = "tea" || val = "juice") {
+        relatedProducts(type: "tea" || "juice") {
             id
             name
         }

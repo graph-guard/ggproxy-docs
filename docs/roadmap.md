@@ -22,11 +22,6 @@ Configurable mapping of schema fields to non-GraphQL data sources such as REST/H
 
 <hr>
 
-🧪 **Template Recorder**<br>
-Introduce `ggproxy record` for recording all incomming queries and compiling a template whitelist.
-
-<hr>
-
 🧪 **Query Complexity Analysis Engine**<br>
 Alternative QCA Engine
 
@@ -73,7 +68,7 @@ Multi-service proxy.
 
 <hr>
 
-✅ **GQT 1.0 and Full Support for [GraphQL spec. October 2021](https://spec.graphql.org/October2021/)**<br>
+✅ **GQT 2.0 and Full Support for [GraphQL spec. October 2021](https://spec.graphql.org/October2021/)**<br>
 <sup>*Beta 1, August 2022*</sup><br>
 
 <br><br><br>

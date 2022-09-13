@@ -1,45 +1,46 @@
 # GQT Input Constraints
 
-Input constraints restrict input values.
+Input constraints restrict input values. If no constraint operator is used then GQT
+assumed the equality constraint by default, for example: `argument: 10` requires `argument` to be equal `10`, while `argument: != 10` requires `argument` to **not** be equal `10`.
+Constraint may be applied to input parameters as well as input object fields.
 The following constraints are supported:
 
 | Constr. | Description | Types |
 |-|-|-|
-| `any` | Matches all values of all types. | All types. |
-| `val = α` | Requires value to be exactly equal `α`. | All types. |
-| `val != α` | Requires value to be not equal `α`. | All types. |
-| `val > α` | Requires value to be greater `α`. | All numeric types. |
-| `val >= α` | Requires value to be greater or equal `α`. | All numeric types. |
-| `val < α` | Requires value to be smaller `α`. | All numeric types. |
-| `val <= α` | Requires value to be smaller or equal `α`. | All numeric types. |
-| `bytelen > α` | Requires the input string value byte-length to be greater `α`. | `String` |
-| `bytelen >= α` | Requires the input string value byte-length to be greater or equal `α`. | `String` |
-| `bytelen < α` | Requires the input string value byte-length to be smaller `α`. | `String` |
-| `bytelen <= α` | Requires the input string value byte-length to be smaller or equal `α`. | `String` |
-| `len > α` | Requires the input array length to be greater `α`. | `Array` |
-| `len >= α` | Requires the input array length to be greater or equal `α`. | `Array` |
-| `len < α` | Requires the input array length to be smaller `α`. | `Array` |
-| `len <= α` | Requires the input array length to be smaller or equal `α`. | `Array` |
+| `*` | Matches all values of all types. | All types. |
+| `α` | Requires value to be exactly equal `α`. | All types. |
+| `!= α` | Requires value to be not equal `α`. | All types. |
+| `> α` | Requires value to be greater `α`. | All numeric types. |
+| `>= α` | Requires value to be greater or equal `α`. | All numeric types. |
+| `< α` | Requires value to be less than `α`. | All numeric types. |
+| `<= α` | Requires value to be less than or equal `α`. | All numeric types. |
+| `len > α` | Requires the input array length or string byte length to be greater `α`. | array, `String` |
+| `len >= α` | Requires the input array length or string byte length to be greater or equal `α`. | array, `String` |
+| `len < α` | Requires the input array length or string byte length to be less than `α`. | array, `String` |
+| `len <= α` | Requires the input array length or string byte length to be less than or equal `α`. | array, `String` |
+| `[...β]` | Requires the input array to match constraint `β` at every index. | array, `String` |
+
+## Example 1
 
 The following template requires:
-- `query.products.limit` to be smaller or equal `10`.
+- `query.products.limit` to be less than or equal `10`.
 - `query.products.relatedProducts.type` to be equal `"chocolate"`.
-- `query.products.relatedProducts.tags` to be an array of length smaller 4.
+- `query.products.relatedProducts.tags` to be an array of length less than 4.
 - `query.products.relatedProducts.like` to be a string with a maximum length of 128 bytes.
 
 `query.products.after` remains unrestricted accepting any incoming value.
 
-## Example 1
-
 ```
 query {
-    products(limit: val <= 10, after: any) {
+    products(limit: <= 10, after: *) {
         id
         name
         relatedProducts(
-            type: val = "chocolate",
-            tags: len < 4
-            like: bytelen <= 128
+            input: {
+                type: "chocolate",
+                tags: len < 4,
+                like: len <= 128,
+            } 
         ) {
             id
             name
@@ -62,17 +63,17 @@ The template above will allow any of the following operations to **pass**:
 
 ```graphql
 {
-    # OK: limit is smaller 10 and after is unrestricted
+    # OK: limit is less than 10 and after is unrestricted
     products(limit: 1, after: null) {
         id name
-        relatedProducts(
+        relatedProducts(input: {
             # OK: type is equal "chocolate"
             type: "chocolate",
-            # OK: tags length is smaller 4
+            # OK: tags length is less than 4
             tags: [ "foo", "bar", "baz" ],
-            # OK: like is 12 bytes long, it's smaller 128
+            # OK: like is 12 bytes long, it's less than 128
             like: "Ελλάδα"
-        ) {
+        }) {
             id
             name
         }
@@ -88,17 +89,17 @@ query(
     $relProdTags: [String!]! = [ "foo", "bar", "baz" ],
     $relProdLike: String! = "Ελλάδα"
 ) {
-    # OK: limit is smaller 10 and after is unrestricted
+    # OK: limit is less than 10 and after is unrestricted
     products(limit: $limit, after: $after) {
         id name
-        relatedProducts(
-            # OK: like is 12 bytes long, it's smaller 128
+        relatedProducts(input: {
+            # OK: like is 12 bytes long, it's less than 128
             like: $relProdLike
-            # OK: tags length is smaller 4
+            # OK: tags length is less than 4
             tags: $relProdTags,
             # OK: type is equal "chocolate"
             type: $relProdType,
-        ) { id name }
+        }) { id name }
     }
 }
 ```
@@ -110,11 +111,11 @@ The following operations will be **rejected**:
     # ERR: constraint violation, limit is greater 10
     products(limit: 11, after: null) {
         id name
-        relatedProducts(
+        relatedProducts(input: {
             type: "chocolate",
             tags: [ "foo", "bar", "baz" ],
             like: "Ελλάδα"
-        ) { id name }
+        }) { id name }
     }
 }
 ```
@@ -122,12 +123,12 @@ The following operations will be **rejected**:
 ```graphql
 {
     products(limit: 1, after: null) {
-        relatedProducts(
+        relatedProducts(input: {
             # ERR: type is not equal "chocolate"
             type: "not chocolate",
             tags: [ "foo", "bar", "baz" ],
             like: "Ελλάδα"
-        ) { id name }
+        }) { id name }
     }
 }
 ```
@@ -135,12 +136,12 @@ The following operations will be **rejected**:
 ```graphql
 {
     products(limit: 1, after: null) {
-        relatedProducts(
+        relatedProducts(input: {
             type: "chocolate",
             # ERR: array length exceeds limit
             tags: [ "foo", "bar", "baz" ],
             like: "Ελλάδα"
-        ) { id name }
+        }) { id name }
     }
 }
 ```
@@ -148,12 +149,12 @@ The following operations will be **rejected**:
 ```graphql
 {
     products(limit: 1, after: null) {
-        relatedProducts(
+        relatedProducts(input: {
             type: "chocolate",
             tags: [ "foo", "bar", "baz" ],
             # ERR: string byte-length exceeds limit
             like: """
-                αυτή η εξαιρετικά μεγάλη τιμή κειμένου
+                }αυτή η εξαιρετικά μεγάλη τιμή κειμένου
                 που υπερβαίνει το όριο των 128 byte
             """
         ) { id name }
@@ -176,25 +177,13 @@ Value constraints can also be nested and applied to objects and arrays.
 ```
 mutation {
     postCoordinates(
-        data: val = [
-            val = {
-                x: val != null
-                y: val != null
-            }
-            val = {
-                x: val != null
-                y: val != null
-            }
-            val = {
-                x: val != null
-                y: val != null
-            }
+        data: [
+            {x: != null, y: != null}
+            {x: != null, y: != null}
+            {x: != null, y: != null}
         ]
-        factors: val = [
-            val = [
-                val != 10
-                val != 14
-            ]
+        factors: [
+            [!= 10, != 14]
         ]
     )
 }

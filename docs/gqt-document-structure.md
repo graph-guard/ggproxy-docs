@@ -52,9 +52,17 @@ The following operations will be **rejected**:
 Documents can be annotated using frontmatter YAML:
 
 ```
+---
+name: Display Name
+tags:
+    - first_tag
+    - second_tag
+---
 query {
-    products(limit: val <= 10, after: any) {
-        
+    fruits {
+        apples
+        oranges
+        bananas
     }
 }
 ```
