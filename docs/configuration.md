@@ -90,3 +90,9 @@ query {
     }
 }
 ```
+
+## Environment Variables
+
+`GGPROXY_LICENSE` is used to provide the license token.
+
+If both `GGPROXY_API_USERNAME` and `GGPROXY_API_PASSWORD` are set then those are used for basic auth on the API, otherwise basic auth on the API will be disabled.
