@@ -34,6 +34,9 @@ export default {
 			}, {
 				text: 'Map Operator',
 				link: '/gqt-map-operator'
+			}, {
+				text: 'Variables',
+				link: '/gqt-variables'
 			}]
 		}]
 	}

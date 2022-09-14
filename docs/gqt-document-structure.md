@@ -5,6 +5,7 @@ Each template document consists of a `query`, `mutation`, or `subscription` defi
 Asking for less than what is allowed by the template (subquery) is legal.
 The order of selections in the GraphQL query doesn't matter.
 GQT is also fragment and variable agnostic, which means that the client can use any shape of a request as long as it matches the template structurally and doesn't violate input constraints.
+
 ```
 query {
     fruits {
