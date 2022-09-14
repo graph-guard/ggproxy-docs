@@ -2,22 +2,22 @@
 
 GraphGuard Proxy expects a specific configuration file structure. By default, the configuration directory is located under `/etc/ggproxy` but you can manually change it using `ggproxy serve -config <path>`.
 
-## Ingress & API
+## Proxy & API
 
-The configuration directory must contain the main configuration file `config.yaml` defining ingress and API server configurations:
+The configuration directory must contain the main configuration file `config.yaml` defining proxy and API server configurations:
 
 ```yaml
 # /etc/ggproxy/config.yaml
 
-ingress:
-  # Address and port of the ingress server.
+proxy:
+  # Address and port of the proxy server.
   host: localhost:443
   # Optional, enables HTTPS.
   tls:
     # Certificate file path.
-    cert-file: ingress.cert
+    cert-file: proxy.cert
     # Private key file path.
-    key-file: ingress.key
+    key-file: proxy.key
   # Optional, in bytes, default: 4MiB.
   max-request-body-size: 1024
 
@@ -33,7 +33,7 @@ api:
     key-file: api.key
 ```
 
-The ingress server is where all incoming traffic will be received and processed.
+The proxy server is where all incoming traffic will be received and processed.
 The API server serves a GraphQL API providing debugging functionality and information about ggproxy's configuration and statistics.
 
 ## Services
