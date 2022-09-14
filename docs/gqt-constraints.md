@@ -232,3 +232,48 @@ mutation {
     )
 }
 ```
+
+
+## Example 3
+
+The any `*` constraint can also be used inside arrays.
+
+```
+mutation {
+    # Require index 1 to equal null while
+    # index 0 and 2 may contain any value.
+    post(dataPoints: [*, null, *])
+}
+```
+
+The template above will allow any of the following operations to **pass**:
+
+```graphql
+mutation {
+    # OK
+    post(dataPoints: [42, null, true])
+}
+```
+
+```graphql
+mutation {
+    # OK
+    post(dataPoints: [null, null, null])
+}
+```
+
+The following operations will be **rejected**:
+
+```graphql
+mutation {
+    # ERR: constraint violation at index 1.
+    post(dataPoints: [42, 42, 42])
+}
+```
+
+```graphql
+mutation {
+    # ERR: array constraint violation.
+    post(dataPoints: [1, null, 3, 4])
+}
+```
