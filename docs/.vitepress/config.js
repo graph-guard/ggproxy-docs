@@ -37,6 +37,9 @@ export default {
 			}, {
 				text: 'Variables',
 				link: '/gqt-variables'
+			}, {
+				text: 'Combination Set',
+				link: '/gqt-combination-set'
 			}]
 		}]
 	}
