@@ -32,8 +32,8 @@ Down below you can find a few ready to go query examples:
 <details>
 <summary>Example 1</summary>
 
-<span style="font-size:1.5em;">gql</span>
-```bash
+<span style="font-size:1.5em;">GraphQL</span>
+```graphql
 query X {
   hero(episode: NEWHOPE) {
     id
@@ -54,8 +54,8 @@ curl 'http://localhost:8000/starwars' -H 'content-type: application/json' --data
 <details>
 <summary>Example 2</summary>
 
-<span style="font-size:1.5em;">gql</span>
-```bash
+<span style="font-size:1.5em;">GraphQL</span>
+```graphql
 query X {
   hero(episode: EMPIRE) {
     id
@@ -83,8 +83,8 @@ curl 'http://localhost:8000/starwars' -H 'content-type: application/json' --data
 <details>
 <summary>Example 3</summary>
 
-<span style="font-size:1.5em;">gql</span>
-```bash
+<span style="font-size:1.5em;">GraphQL</span>
+```graphql
 query X {
   hero(episode: JEDI) {
     id
@@ -120,8 +120,8 @@ curl 'http://localhost:8000/starwars' -H 'content-type: application/json' --data
 <details>
 <summary>Example 4</summary>
 
-<span style="font-size:1.5em;">gql</span>
-```bash
+<span style="font-size:1.5em;">GraphQL</span>
+```graphql
 query X {
   hero(episode: JEDI) {
     id
